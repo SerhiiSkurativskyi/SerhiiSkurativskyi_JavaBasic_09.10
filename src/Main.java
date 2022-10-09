@@ -6,6 +6,7 @@ public class Main {
         System.out.println(latitude);
         System.out.println(longitude);
         System.out.println("Test3");
+        System.out.println("Third commit");
 
     }
 }
