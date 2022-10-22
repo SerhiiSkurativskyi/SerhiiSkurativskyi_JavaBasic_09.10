@@ -14,12 +14,13 @@ public class CounterStrike {
         double alexandrTerrorist = 7;
         double iosifTerrorist = 15;
         double terroristsResult = (ivanTerrorist + vladimirTerrorist + ramzanTerrorist + alexandrTerrorist + iosifTerrorist) / 5;
-        if (policeResult > terroristsResult)
+        if (policeResult > terroristsResult) {
             System.out.println("Победила команда " + teamName1 + ", набравшая " + policeResult + " очков");
-        if (policeResult < terroristsResult)
+        } else if (policeResult < terroristsResult) {
             System.out.println("Победила команда " + teamName2 + ", набравшая " + terroristsResult + " очков");
-        if (policeResult == terroristsResult)
+        } else {
             System.out.println("Матч между командами " + teamName1 + " и " + teamName2 + " закончился вничью со счётом " + policeResult + " : " + terroristsResult);
+        }
     }
 
 }
