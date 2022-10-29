@@ -1,18 +1,20 @@
 public class Main {
     public static void main(String[] args) {
-        int four = 4;
-        int nine = 9;
-        int ten = 10;
-        int oneHundred = 100;
-        for (int shuttleNum = 1; shuttleNum <= 155; shuttleNum++) {
-            if (shuttleNum % oneHundred % ten != four)
-                if (shuttleNum % oneHundred % ten != nine)
-                    if (shuttleNum % oneHundred % ten != shuttleNum % oneHundred - 40)
-                        if (shuttleNum % oneHundred % ten != shuttleNum % oneHundred - 90) {
-                            System.out.println(shuttleNum);
-                        }
+        int unluckyNum1 = 4;
+        int unluckyNum2 = 9;
+        int shuttleMaxCount = 100;
+        int counter = 0;
+        for (int shuttleNum = 1; shuttleNum > 0; shuttleNum++) {
+            if (shuttleNum % 100 % 10 != unluckyNum1
+                    && shuttleNum % 100 % 10 != unluckyNum2
+                    && shuttleNum % 100 % 10 != shuttleNum % 100 - unluckyNum1 * 10
+                    && shuttleNum % 100 % 10 != shuttleNum % 100 - unluckyNum2 * 10) {
+                System.out.println(shuttleNum);
+                counter++;
+                if (counter == shuttleMaxCount)
+                break;
+            }
         }
     }
 }
-
 
