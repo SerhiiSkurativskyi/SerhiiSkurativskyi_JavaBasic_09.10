@@ -17,16 +17,16 @@ public class Main {
             System.out.printf("Your number: %d \n", num);
 
             if (randomInt != num && maxAttempts!=i) {
-                System.out.println("Try again!");
+                System.out.println("Unfortunately you didn't guess. Try again!");
             }
             if (randomInt == num) {
-                System.out.println("You guessed!");
+                System.out.println("Congratulation! You guessed!");
                 i = maxAttempts + 1;
 
                 in.close();
             }
             if (i == (maxAttempts)) {
-                System.out.println("You didn't guess!");
+                System.out.println("You didn't guess! Hidden number was: " + randomInt);
             }
         }
     }
