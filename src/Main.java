@@ -2,42 +2,41 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Drinks drinks = new Drinks();
 
-        Scanner in = new Scanner(System.in);
-        System.out.print("Choose the drink: ");
-        String drinksChoice1 = in.nextLine();
-        DrinksMachine drinksChoice2 = DrinksMachine.valueOf(drinksChoice1);
+        int maxDrinksCount = 100;
 
-        switch (drinksChoice2) {
-            case COFFEE:
-                Drinks.coffeePreparing;
-                break;
-            case TEA:
-                Drinks.teaPreparing;
-                break;
-            case LEMONADE:
-                Drinks.lemonadePreparing;
-                break;
-            case MOJITO:
-                Drinks. mojitoPreparing;
-                break;
-            case MINERAL_WATER:
-                Drinks. mineralWaterPreparing;
-                break;
-            case COCA_COLA:
-                Drinks.cocaColaPreparing;
-                break;
-            default:
-                System.out.println("Your order is empty");
-                break;
+        for (int i = 0; i < maxDrinksCount; i++) {
+            Scanner in = new Scanner(System.in);
+            System.out.print("Choose the drink: ");
+            String drinksChoiceString = in.nextLine();
+            DrinksMachine drinksChoiceEnum = DrinksMachine.valueOf(drinksChoiceString);
+
+            switch (drinksChoiceEnum) {
+                case COFFEE:
+                    drinks.coffeePreparing();
+                    break;
+                case TEA:
+                    drinks.teaPreparing();
+                    break;
+                case LEMONADE:
+                    drinks.lemonadePreparing();
+                    break;
+                case MOJITO:
+                    drinks.mojitoPreparing();
+                    break;
+                case MINERAL_WATER:
+                    drinks.mineralWaterPreparing();
+                    break;
+                case COCA_COLA:
+                    drinks.cocaColaPreparing();
+                    break;
+                default:
+                    System.out.println("Your order is empty");
+                    break;
+            }
+            Drinks.orderSum();
         }
-
-
-        public static double orderSum = Drinks.coffeeCount * Drinks.COFFEE_PRICE + Drinks.teaCount * Drinks.TEA_PRICE + Drinks.lemonadeCount * Drinks.LEMONADE_PRICE +
-                Drinks.mojitoCount * Drinks.MOJITO_PRICE + Drinks.mineralWaterCount * Drinks.MINERAL_WATER_PRICE + Drinks.cocaColaCount * Drinks.COCA_COLA_PRICE;
-
-        System.out.println("Your order price is " + orderSum + "$");
     }
-
-
 }
+
